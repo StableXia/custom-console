@@ -13,16 +13,17 @@ module.exports = {
   input: resolve('./src/index.ts'),
   output: {
     file: resolve('./', pkg.main),
-    format: 'umd'
+    format: 'umd',
+    name: 'FECatch',
   },
   plugins: [
     nodeResolve({
       extensions,
-      modulesOnly: true
+      modulesOnly: true,
     }),
     babel({
       exclude: 'node_modules/**',
-      extensions
-    })
-  ]
+      extensions,
+    }),
+  ],
 }
