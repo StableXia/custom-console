@@ -29,7 +29,7 @@
     }
   },
   "lint-staged": {
-    "*./src/**/*.{js,ts,json,css,less,md}": "eslint --max-warnings=0"
+    "*./src/**/*.{js,ts}": "eslint --max-warnings=0"
   },
   "commitlint": {
     "extends": [
