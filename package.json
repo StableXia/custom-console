@@ -1,0 +1,58 @@
+{
+  "name": "fe-catch",
+  "version": "0.0.1",
+  "description": "一个可以优雅的处理前端错误的库",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaotangdou/fe-catch.git"
+  },
+  "keywords": [
+    "fe",
+    "catch",
+    "error"
+  ],
+  "author": "xw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xiaotangdou/fe-catch/issues"
+  },
+  "homepage": "https://github.com/xiaotangdou/fe-catch#readme",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*./src/**/*.{js,ts,json,css,less,md}": "eslint --max-warnings=0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-angular"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-typescript": "^7.9.0",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-angular": "^8.3.4",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.4",
+    "prettier": "^2.0.5",
+    "rollup": "^2.10.5",
+    "rollup-plugin-babel": "^4.4.0",
+    "typescript": "^3.9.3"
+  }
+}
