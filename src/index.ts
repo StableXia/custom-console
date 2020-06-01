@@ -5,9 +5,11 @@
  * 4、中间件机制
  */
 
-// export function start() {}
-
 class FECatch {
+  constructor(options) {
+    this._options = options
+  }
+
   public use(): void {
     return
   }
@@ -16,5 +18,7 @@ class FECatch {
     return
   }
 }
+
+const FECatch = {}
 
 export default FECatch

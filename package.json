@@ -1,7 +1,7 @@
 {
-  "name": "fe-catch",
+  "name": "custom-console",
   "version": "0.0.1",
-  "description": "一个可以优雅的处理前端错误的库",
+  "description": "一个可以优雅的处理console的库",
   "main": "lib/index.umd.js",
   "module": "lib/index.esm.js",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xiaotangdou/fe-catch.git"
+    "url": "git+https://github.com/xiaotangdou/custom-console.git"
   },
   "keywords": [
     "fe",
@@ -25,9 +25,9 @@
   "author": "xw",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xiaotangdou/fe-catch/issues"
+    "url": "https://github.com/xiaotangdou/custom-console/issues"
   },
-  "homepage": "https://github.com/xiaotangdou/fe-catch#readme",
+  "homepage": "https://github.com/xiaotangdou/custom-console#readme",
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
@@ -35,7 +35,7 @@
     }
   },
   "lint-staged": {
-    "*./src/**/*.{ts}": "eslint --max-warnings=0"
+    "*./src/**/*.{ts,js}": "eslint --max-warnings=0"
   },
   "commitlint": {
     "extends": [
