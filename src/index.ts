@@ -3,12 +3,17 @@
  * 2、可以指定某一类的控制台信息输出
  */
 
-import { initGlobalAPI } from '@src/helpers';
+import { initGlobalAPI, customConsole, customConsoleMixin } from '@src/helpers';
 
-function ConsoleLog(): void {
+function ConsoleLog(this: any): void {
+  if (!(this instanceof ConsoleLog)) {
+    customConsole.warn('[ConsoleLog warn]: ConsoleLog需要使用new关键字实例化');
+  }
+
   return;
 }
 
 initGlobalAPI(ConsoleLog);
+customConsoleMixin(ConsoleLog);
 
 export default ConsoleLog;
