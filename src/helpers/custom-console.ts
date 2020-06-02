@@ -8,6 +8,13 @@ interface IfaNormalizedParams {
 }
 
 function normalizedLogParams(params: any[]): IfaNormalizedParams {
+  if (params.length === 1) {
+    return {
+      markName: '',
+      values: params,
+    };
+  }
+
   const [markName, ...values] = params;
 
   return {
