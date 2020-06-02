@@ -1,24 +1,14 @@
 /**
- * 1、手动开启错误捕捉
- * 2、根据环境开启配置
- * 3、错误捕捉上报率
- * 4、中间件机制
+ * 1、全局开启、关闭信息输出
+ * 2、可以指定某一类的控制台信息输出
  */
 
-class FECatch {
-  constructor(options) {
-    this._options = options
-  }
+import { initGlobalAPI } from '@src/helpers';
 
-  public use(): void {
-    return
-  }
-
-  public start(): void {
-    return
-  }
+function ConsoleLog(): void {
+  return;
 }
 
-const FECatch = {}
+initGlobalAPI(ConsoleLog);
 
-export default FECatch
+export default ConsoleLog;

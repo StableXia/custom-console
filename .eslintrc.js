@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   parser: '@typescript-eslint/parser',
@@ -13,5 +13,6 @@ module.exports = {
   },
   rules: {
     'max-len': ['error', { code: 120 }],
+    '@typescript-eslint/no-explicit-any': 'off',
   },
-}
+};

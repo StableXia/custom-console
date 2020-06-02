@@ -1,15 +1,16 @@
-const path = require('path')
-const babel = require('rollup-plugin-babel')
-const nodeResolve = require('@rollup/plugin-node-resolve')
-const uglify = require('rollup-plugin-uglify').uglify
-const merge = require('lodash.merge')
-const pkg = require('./package.json')
+const path = require('path');
+const babel = require('rollup-plugin-babel');
+const nodeResolve = require('@rollup/plugin-node-resolve');
+const uglify = require('rollup-plugin-uglify').uglify;
+const merge = require('lodash.merge');
+const pkg = require('./package.json');
+const alias = require('@rollup/plugin-alias');
 
-const extensions = ['.js', '.ts']
+const extensions = ['.ts', '.js'];
 
 const resolve = function (...args) {
-  return path.resolve(__dirname, ...args)
-}
+  return path.resolve(__dirname, ...args);
+};
 
 // 打包任务的个性化配置
 const jobs = {
@@ -23,21 +24,21 @@ const jobs = {
     output: {
       format: 'umd',
       file: resolve(pkg.main),
-      name: 'FECatch',
+      name: 'ConsoleLog',
     },
   },
   min: {
     output: {
       format: 'umd',
       file: resolve(pkg.main.replace(/(.\w+)$/, '.min$1')),
-      name: 'FECatch',
+      name: 'ConsoleLog',
     },
     plugins: [uglify()],
   },
-}
+};
 
 // 从环境变量获取打包特征
-const mergeConfig = jobs[process.env.FORMAT || 'esm']
+const mergeConfig = jobs[process.env.FORMAT || 'esm'];
 
 module.exports = merge(
   {
@@ -52,7 +53,10 @@ module.exports = merge(
         exclude: 'node_modules/**',
         extensions,
       }),
+      alias({
+        entries: [{ find: '@src', replacement: resolve('src') }],
+      }),
     ],
   },
   mergeConfig
-)
+);
