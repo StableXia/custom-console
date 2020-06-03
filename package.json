@@ -11,6 +11,7 @@
     "build:umd": "rollup -c --environment FORMAT:umd",
     "build:min": "rollup -c --environment FORMAT:min",
     "build": "rimraf lib/* && run-p build:esm build:umd build:min",
+    "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,8 +20,7 @@
   },
   "keywords": [
     "fe",
-    "catch",
-    "error"
+    "console"
   ],
   "author": "xw",
   "license": "MIT",

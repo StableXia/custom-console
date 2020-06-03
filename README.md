@@ -2,12 +2,30 @@
 
 一个可以优雅的处理控制台打印信息的库
 
-### custom-console 的历程
+### 安装
+
+```shell
+npm install custom-console
+```
+
+### 如何使用
+
+```js
+import ConsoleLog from 'custom-console';
+
+ConsoleLog.config.splitter = '------>';
+
+const consoleLog = new ConsoleLog();
+
+consoleLog.log('test', 123); // test ------> 123
+```
+
+### 写在最后，custom-console 的历程
 
 #### package 要做哪些事
 
 1、控制台信息可以全局开启关闭  
-2、运行时根据当前环境进行相应的信息处理
+2、运行时根据当前环境进行相应的信息处理  
 3、使用方式
 
 #### 知识点
